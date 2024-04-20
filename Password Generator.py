@@ -142,4 +142,5 @@ with open("Password Storage.txt", "a") as file:
     file.write(org + "\n")
     file.write(usr + "\n")
     file.write(password + "\n")
+    file.write("\n")
 
