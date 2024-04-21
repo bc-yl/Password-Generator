@@ -117,6 +117,9 @@ while True:
     length = input("Password Length (8+): ")
     if not re.match("^[0-9]+$", length):
         print("Please enter a valid number!")
+        continue
+    if int(length) < 8:
+        print("Please enter a number greater than 7!")
     else:
         length = int(length)
         break
