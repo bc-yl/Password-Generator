@@ -1,4 +1,5 @@
 import random
+import re
 
 def fill_dict_all(dict: dict) -> dict:
     count = 0
@@ -112,7 +113,13 @@ for index in range(62, 94):
     sym_dict.add(val_dict.get(index))
 org = input("Organisation: ")
 usr = input("Username: ")
-length = int(input("Password Length: "))
+while True:
+    length = input("Password Length (8+): ")
+    if not re.match("^[0-9]+$", length):
+        print("Please enter a valid number!")
+    else:
+        length = int(length)
+        break
 wants_num = check_num()
 wants_sym = False
 if wants_num:
