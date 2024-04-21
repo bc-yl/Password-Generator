@@ -105,16 +105,6 @@ def contains_lc(password: str):
     
     return False
 
-def is_valid(password: str, wants_num, wants_sym, sym_dict):
-    if (contains_lc(password) == True and contains_uc == True and 
-    contains_num(password) == wants_num and contains_sym(password, sym_dict) 
-    == wants_sym):
-        return True
-    
-
-    return False
-
-
 val_dict = {}
 sym_dict = set()
 fill_dict_all(val_dict)
@@ -128,9 +118,6 @@ wants_sym = False
 if wants_num:
     wants_sym = check_symbol()
 password = generate_pass(length, wants_num, wants_sym, val_dict)
-#while is_valid(password, wants_num, wants_sym, sym_dict) != True:
-    #password = generate_pass(length, wants_num, wants_sym, val_dict)
-    #print(password)
 while (contains_lc(password) == False or contains_uc(password) == False or
        contains_num(password) != wants_num or contains_sym(password, sym_dict) 
        != wants_sym):
