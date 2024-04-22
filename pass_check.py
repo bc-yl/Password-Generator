@@ -1,31 +1,25 @@
-def contains_sym(password: str, sym_dict):
+def is_valid(password: str, sym_dict: set, wants_num: bool, wants_sym: bool):
+    contains_sym = False
+    contains_lc = False
+    contains_uc = False
+    contains_num = False
     for val in range(len(password)):
-        if password[val] in sym_dict:
+        if (contains_sym == wants_sym and contains_lc is True and contains_num
+            == wants_num and contains_uc is True):
             return True
+        elif password[val] in sym_dict:
+            contains_sym = True
+            continue
+        elif password[val].isupper() is True:
+            contains_uc = True
+            continue
+        elif password[val].islower() is True:
+            contains_lc = True
+            continue
+        elif password[val].isdigit() is True:
+            contains_num = True
+            continue
     
 
     return False
 
-def contains_num(password: str):
-    for val in range(len(password)):
-        if password[val].isdigit():
-            return True
-        
-    
-    return False
-
-def contains_uc(password: str):
-    for val in range(len(password)):
-        if password[val].isupper():
-            return True
-        
-    
-    return False
-
-def contains_lc(password: str):
-    for val in range(len(password)):
-        if password[val].islower():
-            return True
-        
-    
-    return False

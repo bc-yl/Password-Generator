@@ -31,7 +31,7 @@ def fill_dict_all(dict: dict) -> dict:
 
     return dict
 
-def fill_dict_sym(val_dict: dict, sym_dict: dict):
+def fill_dict_sym(val_dict: dict, sym_dict: set):
     for index in range(62, 94):
         sym_dict.add(val_dict.get(index))
     

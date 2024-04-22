@@ -3,7 +3,7 @@ import re
 from dictionary_creation import fill_dict_all, fill_dict_sym
 from pass_gen import generate_pass
 from parameter_query import check_num, check_symbol
-from pass_check import contains_lc, contains_num, contains_sym, contains_uc
+from pass_check import is_valid
 
 val_dict = {}
 sym_dict = set()
@@ -26,9 +26,7 @@ wants_sym = False
 if wants_num:
     wants_sym = check_symbol()
 password = generate_pass(length, wants_num, wants_sym, val_dict)
-while (contains_lc(password) == False or contains_uc(password) == False or
-       contains_num(password) != wants_num or contains_sym(password, sym_dict) 
-       != wants_sym):
+while is_valid(password, sym_dict, wants_num, wants_sym) is False:
     password = generate_pass(length, wants_num, wants_sym, val_dict)
 org = "Organisation: " + org
 usr = "Username: " + usr
