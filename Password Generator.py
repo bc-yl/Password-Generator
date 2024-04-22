@@ -1,4 +1,3 @@
-import random
 import re
 from dictionary_creation import fill_dict_all, fill_dict_sym
 from pass_gen import generate_pass

@@ -9,17 +9,13 @@ def is_valid(password: str, sym_dict: set, wants_num: bool, wants_sym: bool):
             return True
         elif password[val] in sym_dict:
             contains_sym = True
-            continue
         elif password[val].isupper() is True:
             contains_uc = True
-            continue
         elif password[val].islower() is True:
             contains_lc = True
-            continue
         elif password[val].isdigit() is True:
             contains_num = True
-            continue
-    
+
 
     return False
 
